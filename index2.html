@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ring Ceremony Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', cursive;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd86f, #a18cd1);
+            background-size: 400% 400%;
+            animation: bg 10s infinite alternate;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes bg {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .scene {
+            width: 80%;
+        }
+
+        .text {
+            font-size: 40px;
+            opacity: 0;
+            animation: show 5s forwards;
+        }
+
+        .names {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .names img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .ring {
+            font-size: 80px;
+            margin: 20px;
+            animation: rotate 4s infinite linear;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes show {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scene">
+
+        <div id="slide1" class="slide text">
+            💍 Ring Ceremony Invitation
+        </div>
+
+        <div id="slide2" class="slide text">
+            Coming Soon
+        </div>
+
+        <div id="slide3" class="slide text">
+            <div class="names">
+                <img src="bride.jpg" alt="Bride">
+                ❤️
+                <img src="groom.jpg" alt="Groom">
+            </div>
+            <div style="margin-top:20px; font-size:40px;">Sanjana & Abhishek</div>
+        </div>
+
+        <div id="slide4" class="slide text">
+            <div class="ring">💍</div>
+            Ring Ceremony Celebration
+        </div>
+
+        <div id="slide5" class="slide text">
+            23 March 2026<br>
+            KK Hotel, Basoda<br>
+            Best Wishes & Blessings
+        </div>
+
+    </div>
+
+    <script>
+        let slides = document.querySelectorAll(".slide");
+        let index = 0;
+        function showSlide() {
+            slides.forEach(s => s.style.display = "none");
+            slides[index].style.display = "block";
+            index++;
+            if (index < slides.length) {
+                setTimeout(showSlide, 6000); // 5 slides × 6s ≈ 30 sec
+            }
+        }
+            showSlide();
+
+
+    </script>
+</body>
+
+</html>

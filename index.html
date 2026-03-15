@@ -1,180 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engagement Invitation</title>
+<meta charset="UTF-8">
+<title>Ring Ceremony Invitation</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
-        rel="stylesheet">
+<style>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body{
+margin:0;
+overflow:hidden;
+font-family: 'Segoe UI', cursive;
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd86f,#a18cd1);
+background-size:400% 400%;
+animation:bg 10s infinite alternate;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+text-align:center;
+}
 
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f8e1f4, #e0f0ff);
-        }
+@keyframes bg{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
 
-        .card {
-            background: white;
-            padding: 50px 40px;
-            max-width: 650px;
-            width: 90%;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            animation: fadeIn 1.2s ease;
+.scene{
+width:80%;
+}
 
-        }
+.text{
+font-size:40px;
+opacity:0;
+animation:show 5s forwards;
+}
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            color: #b76e79;
-            margin-bottom: 10px;
-        }
+.names{
+font-size:50px;
+font-weight:bold;
+margin-top:10px;
+}
 
-        .subtitle {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #555;
-        }
+.ring{
+font-size:80px;
+margin:20px;
+animation:rotate 4s infinite linear;
+}
 
-        .couple {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
+@keyframes rotate{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
 
-        .person {
-            text-align: center;
-        }
+@keyframes show{
+0%{opacity:0; transform:translateY(40px);}
+100%{opacity:1; transform:translateY(0);}
+}
 
-        .person img {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #f3c6d3;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
+.slide{
+display:none;
+}
 
-        .person p {
-            margin-top: 8px;
-            font-weight: 500;
-        }
-
-        .heart {
-            font-size: 30px;
-            color: #e25555;
-        }
-
-        .names {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            margin: 15px 0;
-        }
-
-        .details {
-            margin-top: 20px;
-            line-height: 1.8;
-            color: #444;
-            font-size: 16px;
-        }
-
-        .footer {
-            margin-top: 25px;
-            font-style: italic;
-            color: #777;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media(max-width:500px) {
-
-            .couple {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .heart {
-                font-size: 24px;
-            }
-
-            .names {
-                font-size: 24px;
-            }
-
-        }
-    </style>
+</style>
 </head>
 
 <body>
 
-    <div class="card">
-        <!-- <img src="flower.png" class="flower top-right"> -->
+<div class="scene">
 
+<div id="slide1" class="slide text">
+💍 Ring Ceremony Invitation
+</div>
 
-        <!-- <img src="flower.png" class="flower bottom-left"> -->
-        <h1>You're Invited</h1>
-        <p class="subtitle">to celebrate the Engagement of</p>
+<div id="slide2" class="slide text">
+Coming Soon
+</div>
 
-        <div class="couple">
+<div id="slide3" class="slide text">
+<div class="names">Sanjana ❤️ Abhishek</div>
+</div>
 
-            <div class="person">
-                <img src="groom.jpg" alt="Groom">
-                <p>Abhishek</p>
-            </div>
+<div id="slide4" class="slide text">
+<div class="ring">💍</div>
+Ring Ceremony Celebration
+</div>
 
-            <div class="heart">❤</div>
+<div id="slide5" class="slide text">
+23 March 2026<br>
+Best Wishes & Blessings
+</div>
 
-            <div class="person">
-                <img src="bride.jpg" alt="Bride">
-                <p>Sanjana</p>
-            </div>
+</div>
 
-        </div>
+<script>
 
-        <div class="names">
-            Abhishek & Sanjana
-        </div>
+let slides=document.querySelectorAll(".slide");
+let index=0;
 
-        <div class="details">
-            <p><strong>Date:</strong> 23 March 2026</p>
-            <p><strong>Time:</strong> 3:00 PM</p>
-            <p><strong>Venue:</strong> KK Hotel</p>
-            <p>Basoda, Madhya Pradesh</p>
-        </div>
+function showSlide(){
+slides.forEach(s=>s.style.display="none");
+slides[index].style.display="block";
+index++;
 
-        <p class="footer">
-            With love from both families
-        </p>
+if(index<slides.length){
+setTimeout(showSlide,6000); // 5 slides × 6s ≈ 30 sec
+}
+}
 
-    </div>
+showSlide();
+
+</script>
 
 </body>
-
 </html>
